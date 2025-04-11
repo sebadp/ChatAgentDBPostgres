@@ -1,168 +1,168 @@
-# Guía de Uso de ChatAgentDB
+# ChatAgentDB Usage Guide
 
-Esta guía te enseñará cómo aprovechar al máximo ChatAgentDB para interactuar con tu base de datos PostgreSQL mediante lenguaje natural.
+This guide will teach you how to make the most of ChatAgentDB to interact with your PostgreSQL database using natural language.
 
-## 🚀 Primeros Pasos
+## 🚀 Getting Started
 
-Una vez que hayas conectado ChatAgentDB a tu base de datos (siguiendo las instrucciones en [setup.md](setup.md)), estarás listo para comenzar a hacer consultas.
+Once you have connected ChatAgentDB to your database (following the instructions in [setup.md](setup.md)), you'll be ready to start making queries.
 
-### Interfaz Principal
+### Main Interface
 
-La interfaz de ChatAgentDB consta de:
+The ChatAgentDB interface consists of:
 
-1. **Panel lateral** - Configuración de la conexión a la base de datos
-2. **Área de chat** - Donde interactúas con el agente y ves los resultados
-3. **Resumen de esquema** - Una vez conectado, muestra información sobre las tablas disponibles
+1. **Sidebar** - Database connection configuration
+2. **Chat area** - Where you interact with the agent and see the results
+3. **Schema summary** - Once connected, shows information about the available tables
 
-## 💬 Haciendo Preguntas
+## 💬 Asking Questions
 
-Puedes hacer preguntas en lenguaje natural sobre tus datos. El agente:
-- Traducirá tus preguntas a SQL
-- Ejecutará las consultas en tu base de datos
-- Presentará los resultados de manera comprensible
+You can ask questions in natural language about your data. The agent will:
+- Translate your questions into SQL
+- Execute the queries on your database
+- Present the results in an understandable way
 
-### Ejemplos de Preguntas Básicas
+### Basic Question Examples
 
-- "¿Qué tablas hay en la base de datos?"
-- "Muestra los primeros 5 registros de la tabla usuarios"
-- "¿Cuántos productos tenemos en total?"
-- "¿Cuál es el precio promedio de los productos?"
+- "What tables are in the database?"
+- "Show the first 5 records from the users table"
+- "How many products do we have in total?"
+- "What is the average price of products?"
 
-### Ejemplos de Preguntas Intermedias
+### Intermediate Question Examples
 
-- "¿Cuáles son los 3 productos más vendidos este mes?"
-- "Muestra las ventas totales por región, ordenadas de mayor a menor"
-- "¿Qué clientes han gastado más de 1000 dólares en el último trimestre?"
-- "Compara las ventas de este mes con las del mes anterior"
+- "What are the 3 best-selling products this month?"
+- "Show total sales by region, ordered from highest to lowest"
+- "Which customers have spent more than $1000 in the last quarter?"
+- "Compare this month's sales with last month's"
 
-### Ejemplos de Preguntas Avanzadas
+### Advanced Question Examples
 
-- "Calcula la tasa de retención de clientes mes a mes durante el último año"
-- "Muestra un análisis de cohorte de los usuarios que se registraron en enero"
-- "¿Cuál es la correlación entre el precio de los productos y su volumen de ventas?"
-- "Identifica productos con patrones de venta estacional basados en datos históricos"
+- "Calculate the customer retention rate month by month during the last year"
+- "Show a cohort analysis of users who registered in January"
+- "What is the correlation between product price and sales volume?"
+- "Identify products with seasonal sales patterns based on historical data"
 
-## 🧠 Técnicas Efectivas
+## 🧠 Effective Techniques
 
-### Proporcionar Contexto
+### Providing Context
 
-Para obtener mejores resultados, es útil proporcionar contexto adicional:
+To get better results, it's helpful to provide additional context:
 
-❌ **Menos efectivo**: "Muestra los datos de ventas"
+❌ **Less effective**: "Show sales data"
 
-✅ **Más efectivo**: "Muestra las ventas totales por categoría de producto para el primer trimestre de 2024"
+✅ **More effective**: "Show total sales by product category for the first quarter of 2024"
 
-### Solicitudes Específicas de Formato
+### Specific Format Requests
 
-Puedes solicitar formatos específicos para los resultados:
+You can request specific formats for the results:
 
-- "Muestra los resultados ordenados por fecha descendente"
-- "Presenta estos datos como porcentajes"
-- "Calcula la diferencia porcentual entre estos períodos"
+- "Show the results ordered by date descending"
+- "Present this data as percentages"
+- "Calculate the percentage difference between these periods"
 
-### Consultas Múltiples
+### Multiple Queries
 
-Puedes encadenar análisis complejos:
+You can chain complex analyses:
 
-"Primero muestra las ventas mensuales del año pasado, luego calcula la tasa de crecimiento mes a mes, y finalmente identifica los meses con crecimiento negativo"
+"First show the monthly sales from last year, then calculate the month-to-month growth rate, and finally identify the months with negative growth"
 
-### Consultas Exploratorias
+### Exploratory Queries
 
-Si no estás familiarizado con el esquema:
+If you're not familiar with the schema:
 
-1. "¿Qué tablas hay en esta base de datos?"
-2. "Muestra la estructura de la tabla clientes"
-3. "¿Qué campos tiene la tabla pedidos?"
+1. "What tables are in this database?"
+2. "Show the structure of the customers table"
+3. "What fields does the orders table have?"
 
-## 📊 Casos de Uso Comunes
+## 📊 Common Use Cases
 
-### Análisis de Ventas
+### Sales Analysis
 
-- "¿Cuál fue el ingreso total del último trimestre desglosado por línea de productos?"
-- "Muestra la tendencia de ventas semanales durante los últimos 3 meses"
-- "Compara el rendimiento de ventas de las regiones este y oeste"
+- "What was the total revenue for the last quarter broken down by product line?"
+- "Show the weekly sales trend over the last 3 months"
+- "Compare the sales performance of the east and west regions"
 
-### Análisis de Usuarios
+### User Analysis
 
-- "¿Cuál es la tasa de conversión de usuarios registrados a compradores?"
-- "Muestra la distribución de usuarios por grupo de edad y género"
-- "¿Qué porcentaje de usuarios ha estado inactivo durante más de 30 días?"
+- "What is the conversion rate from registered users to buyers?"
+- "Show the distribution of users by age group and gender"
+- "What percentage of users has been inactive for more than 30 days?"
 
-### Gestión de Inventario
+### Inventory Management
 
-- "Identifica productos con menos de 10 unidades en stock"
-- "¿Cuál es la rotación de inventario por categoría de producto?"
-- "Muestra los productos que necesitan reabastecimiento basado en tendencias de ventas"
+- "Identify products with fewer than 10 units in stock"
+- "What is the inventory turnover by product category?"
+- "Show products that need restocking based on sales trends"
 
-## 🔍 Depuración de Consultas
+## 🔍 Query Debugging
 
-Si los resultados no son los esperados:
+If the results aren't what you expected:
 
-1. **Sé más específico**: "En la tabla 'ventas', muestra solo las transacciones completadas de abril 2024"
-2. **Reformula la pregunta**: "De otra manera, ¿puedes mostrarme el total de ventas diarias del mes pasado?"
-3. **Solicita explicación**: "¿Puedes explicar cómo llegaste a este resultado?"
-4. **Corrige suposiciones**: "No, la tabla de usuarios no tiene un campo 'edad', usa 'fecha_nacimiento' para calcular la edad"
+1. **Be more specific**: "In the 'sales' table, show only completed transactions from April 2024"
+2. **Rephrase the question**: "Alternatively, can you show me the total daily sales from last month?"
+3. **Ask for an explanation**: "Can you explain how you arrived at this result?"
+4. **Correct assumptions**: "No, the users table doesn't have an 'age' field, use 'birth_date' to calculate age"
 
-## 🚫 Limitaciones
+## 🚫 Limitations
 
-Ten en cuenta estas limitaciones al usar ChatAgentDB:
+Keep these limitations in mind when using ChatAgentDB:
 
-- **Operaciones de escritura**: Por seguridad, el agente está configurado principalmente para consultas de lectura (SELECT)
-- **Rendimiento con datasets grandes**: Las consultas complejas en bases de datos muy grandes pueden tardar
-- **Consultas muy especializadas**: Algunas consultas muy específicas del dominio pueden requerir refinamiento
-- **Tablas sin relaciones claras**: El agente funciona mejor con esquemas bien estructurados con relaciones explícitas
+- **Write operations**: For security, the agent is primarily configured for read queries (SELECT)
+- **Performance with large datasets**: Complex queries on very large databases may take time
+- **Very specialized queries**: Some very domain-specific queries may require refinement
+- **Tables without clear relationships**: The agent works best with well-structured schemas with explicit relationships
 
-## 🔄 Mantener el Contexto
+## 🔄 Maintaining Context
 
-ChatAgentDB mantiene el contexto de la conversación, lo que te permite hacer preguntas de seguimiento:
+ChatAgentDB maintains the context of the conversation, allowing you to ask follow-up questions:
 
-1. "Muestra las ventas del mes pasado"
-2. "¿Cuáles fueron los 3 productos más vendidos?"
-3. "¿Qué clientes compraron estos productos?"
+1. "Show sales from last month"
+2. "What were the 3 best-selling products?"
+3. "Which customers bought these products?"
 
-## 📋 Ejemplos Completos de Sesiones
+## 📋 Complete Session Examples
 
-### Ejemplo 1: Análisis de Rendimiento de Ventas
-
-```
-Usuario: "¿Cuántas ventas totales tuvimos en 2023?"
-Agente: [Muestra total de ventas para 2023]
-
-Usuario: "¿Cómo se compara eso con 2022?"
-Agente: [Muestra comparación entre 2023 y 2022]
-
-Usuario: "Desglosado por trimestre, ¿cuál fue nuestro mejor período?"
-Agente: [Muestra análisis trimestral]
-
-Usuario: "Para el mejor trimestre, muestra el desglose por producto"
-Agente: [Muestra los productos vendidos en ese trimestre]
-```
-
-### Ejemplo 2: Investigación de Usuario
+### Example 1: Sales Performance Analysis
 
 ```
-Usuario: "¿Cuántos usuarios nuevos se registraron en marzo?"
-Agente: [Muestra conteo de nuevos usuarios]
+User: "How many total sales did we have in 2023?"
+Agent: [Shows total sales for 2023]
 
-Usuario: "¿De qué regiones provienen principalmente?"
-Agente: [Muestra distribución geográfica]
+User: "How does that compare to 2022?"
+Agent: [Shows comparison between 2023 and 2022]
 
-Usuario: "¿Qué porcentaje de ellos ha realizado al menos una compra?"
-Agente: [Muestra tasa de conversión]
+User: "Broken down by quarter, which was our best period?"
+Agent: [Shows quarterly analysis]
+
+User: "For the best quarter, show the breakdown by product"
+Agent: [Shows products sold in that quarter]
 ```
 
-## 🛠️ Mejores Prácticas
+### Example 2: User Investigation
 
-1. **Comienza con consultas simples** para familiarizarte con tus datos
-2. **Construye gradualmente** hacia análisis más complejos
-3. **Proporciona feedback** para ayudar al agente a refinar sus respuestas
-4. **Verifica los resultados** para consultas críticas
-5. **Usa términos consistentes** que coincidan con tu esquema de base de datos
+```
+User: "How many new users registered in March?"
+Agent: [Shows count of new users]
 
-## 📚 Recursos Adicionales
+User: "What regions do they primarily come from?"
+Agent: [Shows geographic distribution]
 
-Para aprender más sobre cómo trabajar con bases de datos y análisis de datos:
+User: "What percentage of them have made at least one purchase?"
+Agent: [Shows conversion rate]
+```
 
-- [Documentación oficial de PostgreSQL](https://www.postgresql.org/docs/)
-- [Guía de SQL para análisis de datos](https://mode.com/sql-tutorial/)
-- [Mejores prácticas de modelado de datos](https://www.datacamp.com/community/tutorials/database-design-tutorial)
+## 🛠️ Best Practices
+
+1. **Start with simple queries** to familiarize yourself with your data
+2. **Build gradually** toward more complex analyses
+3. **Provide feedback** to help the agent refine its responses
+4. **Verify results** for critical queries
+5. **Use consistent terms** that match your database schema
+
+## 📚 Additional Resources
+
+To learn more about working with databases and data analysis:
+
+- [Official PostgreSQL Documentation](https://www.postgresql.org/docs/)
+- [SQL Guide for Data Analysis](https://mode.com/sql-tutorial/)
+- [Data Modeling Best Practices](https://www.datacamp.com/community/tutorials/database-design-tutorial)

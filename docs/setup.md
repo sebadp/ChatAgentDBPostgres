@@ -1,87 +1,87 @@
-# Guía de Configuración de ChatAgentDB
+# ChatAgentDB Setup Guide
 
-Esta guía te ayudará a configurar ChatAgentDB correctamente para interactuar con tu base de datos PostgreSQL.
+This guide will help you correctly configure ChatAgentDB to interact with your PostgreSQL database.
 
-## Requisitos Previos
+## Prerequisites
 
-Antes de comenzar, asegúrate de tener:
+Before starting, make sure you have:
 
-1. **Python 3.8+** instalado en tu sistema
-2. **Acceso a una base de datos PostgreSQL** (local o remota)
-3. **Clave API de OpenAI** (obtenible en [OpenAI Platform](https://platform.openai.com/account/api-keys))
-4. **Permisos de lectura** en las tablas que deseas consultar
+1. **Python 3.8+** installed on your system
+2. **Access to a PostgreSQL database** (local or remote)
+3. **OpenAI API key** (obtainable from [OpenAI Platform](https://platform.openai.com/account/api-keys))
+4. **Read permissions** on the tables you want to query
 
-## Instalación Paso a Paso
+## Step-by-Step Installation
 
-### 1. Preparar el Entorno
+### 1. Prepare the Environment
 
 ```bash
-# Clonar el repositorio
+# Clone the repository
 git clone https://github.com/yourusername/ChatAgentDB.git
 cd ChatAgentDB
 
-# Crear un entorno virtual
+# Create a virtual environment
 python -m venv venv
 
-# Activar el entorno virtual
-# En Windows:
+# Activate the virtual environment
+# On Windows:
 venv\Scripts\activate
-# En macOS/Linux:
+# On macOS/Linux:
 source venv/bin/activate
 
-# Instalar dependencias
+# Install dependencies
 pip install -r requirements.txt
 ```
 
-### 2. Configurar Variables de Entorno (opcional)
+### 2. Configure Environment Variables (optional)
 
-Para mayor seguridad, puedes configurar variables de entorno en lugar de ingresar credenciales directamente en la interfaz:
+For better security, you can configure environment variables instead of entering credentials directly in the interface:
 
 ```bash
-# En Windows (PowerShell):
-$env:OPENAI_API_KEY="tu-clave-api"
+# On Windows (PowerShell):
+$env:OPENAI_API_KEY="your-api-key"
 $env:PG_HOST="localhost"
 $env:PG_PORT="5432"
 $env:PG_USER="postgres"
-$env:PG_PASSWORD="tu-contraseña"
-$env:PG_DATABASE="nombre-base-datos"
+$env:PG_PASSWORD="your-password"
+$env:PG_DATABASE="database-name"
 
-# En macOS/Linux:
-export OPENAI_API_KEY="tu-clave-api"
+# On macOS/Linux:
+export OPENAI_API_KEY="your-api-key"
 export PG_HOST="localhost"
 export PG_PORT="5432"
 export PG_USER="postgres"
-export PG_PASSWORD="tu-contraseña"
-export PG_DATABASE="nombre-base-datos"
+export PG_PASSWORD="your-password"
+export PG_DATABASE="database-name"
 ```
 
-Alternativamente, puedes crear un archivo `.env` en el directorio raíz:
+Alternatively, you can create a `.env` file in the root directory:
 
 ```
-OPENAI_API_KEY=tu-clave-api
+OPENAI_API_KEY=your-api-key
 PG_HOST=localhost
 PG_PORT=5432
 PG_USER=postgres
-PG_PASSWORD=tu-contraseña
-PG_DATABASE=nombre-base-datos
+PG_PASSWORD=your-password
+PG_DATABASE=database-name
 ```
 
-### 3. Configuración de PostgreSQL
+### 3. PostgreSQL Configuration
 
-Asegúrate de que tu base de datos PostgreSQL:
+Make sure your PostgreSQL database:
 
-1. Sea accesible desde la máquina donde ejecutas ChatAgentDB
-2. Tenga habilitada la autenticación por contraseña
-3. El usuario tenga permisos para ejecutar consultas SELECT en las tablas necesarias
+1. Is accessible from the machine where you're running ChatAgentDB
+2. Has password authentication enabled
+3. The user has permissions to execute SELECT queries on the necessary tables
 
-Para una configuración local básica de PostgreSQL:
+For a basic local PostgreSQL configuration:
 
 ```bash
-# Instalar PostgreSQL (ejemplo en Ubuntu)
+# Install PostgreSQL (example on Ubuntu)
 sudo apt-get update
 sudo apt-get install postgresql postgresql-contrib
 
-# Configurar un usuario y base de datos (opcional)
+# Configure a user and database (optional)
 sudo -u postgres psql
 
 CREATE DATABASE mydatabase;
@@ -90,85 +90,85 @@ GRANT ALL PRIVILEGES ON DATABASE mydatabase TO myuser;
 \q
 ```
 
-### 4. Ejecutar la Aplicación
+### 4. Run the Application
 
-Una vez configurado todo:
+Once everything is configured:
 
 ```bash
 streamlit run app.py
 ```
 
-La aplicación se iniciará y estará disponible en tu navegador (generalmente en http://localhost:8501).
+The application will start and be available in your browser (usually at http://localhost:8501).
 
-### 5. Conectar a la Base de Datos
+### 5. Connect to the Database
 
-En la interfaz de ChatAgentDB:
+In the ChatAgentDB interface:
 
-1. Ingresa los detalles de conexión en el panel lateral:
-   - Host (por defecto: localhost)
-   - Puerto (por defecto: 5432)
-   - Nombre de la base de datos
-   - Usuario
-   - Contraseña
-   - Clave API de OpenAI
+1. Enter the connection details in the sidebar:
+   - Host (default: localhost)
+   - Port (default: 5432)
+   - Database name
+   - Username
+   - Password
+   - OpenAI API key
 
-2. Haz clic en "Conectar"
+2. Click "Connect"
 
-Si la conexión es exitosa, verás un mensaje de confirmación y un resumen de las tablas disponibles en tu base de datos.
+If the connection is successful, you'll see a confirmation message and a summary of the available tables in your database.
 
-## Solución de Problemas
+## Troubleshooting
 
-### Error de Conexión a PostgreSQL
+### PostgreSQL Connection Error
 
-- Verifica que el servidor PostgreSQL esté en ejecución
-- Confirma que las credenciales sean correctas
-- Asegúrate de que la máquina donde ejecutas la aplicación pueda acceder al servidor PostgreSQL
-- Revisa la configuración de firewall o VPN que pueda estar bloqueando la conexión
+- Verify that the PostgreSQL server is running
+- Confirm that the credentials are correct
+- Make sure the machine where you're running the application can access the PostgreSQL server
+- Check firewall or VPN configuration that might be blocking the connection
 
-### Error con la API de OpenAI
+### OpenAI API Error
 
-- Verifica que tu clave API sea válida y esté activa
-- Asegúrate de tener saldo suficiente en tu cuenta de OpenAI
-- Revisa la conexión a internet
+- Verify that your API key is valid and active
+- Make sure you have sufficient balance in your OpenAI account
+- Check your internet connection
 
-### Problemas con las Dependencias de Python
+### Python Dependency Issues
 
-Si encuentras errores relacionados con las dependencias:
+If you encounter errors related to dependencies:
 
 ```bash
-# Actualiza pip
+# Update pip
 pip install --upgrade pip
 
-# Instala dependencias específicas
+# Install specific dependencies
 pip install streamlit langchain langchain-openai langchain-community psycopg2-binary langsmith langraph
 
-# Si usas Windows y tienes problemas con psycopg2:
+# If you're using Windows and having issues with psycopg2:
 pip install psycopg2-binary
 ```
 
-## Configuración Avanzada
+## Advanced Configuration
 
-### Personalización del Modelo de Lenguaje
+### Language Model Customization
 
-Por defecto, ChatAgentDB utiliza el modelo GPT-4 de OpenAI. Si deseas utilizar un modelo diferente, puedes modificar la variable `model` en el código:
+By default, ChatAgentDB uses OpenAI's GPT-4 model. If you want to use a different model, you can modify the `model` variable in the code:
 
 ```python
-# Busca esta línea en app.py
+# Look for this line in app.py
 llm = ChatOpenAI(temperature=0, model="gpt-4-turbo")
 
-# Y cámbiala por el modelo que prefieras, por ejemplo:
+# And change it to the model you prefer, for example:
 llm = ChatOpenAI(temperature=0, model="gpt-3.5-turbo")
 ```
 
-### Ajuste de Memoria de Conversación
+### Conversation Memory Adjustment
 
-Para modificar cómo la aplicación maneja el historial de conversación, puedes ajustar la configuración de memoria:
+To modify how the application handles conversation history, you can adjust the memory configuration:
 
 ```python
-# Para aumentar o disminuir el tamaño del historial
+# To increase or decrease the history size
 memory = ConversationBufferMemory(return_messages=True, max_token_limit=2000)
 ```
 
-## Siguientes Pasos
+## Next Steps
 
-Una vez que hayas configurado ChatAgentDB correctamente, consulta [usage.md](usage.md) para aprender a interactuar efectivamente con tu base de datos usando lenguaje natural.
+Once you have correctly configured ChatAgentDB, consult [usage.md](usage.md) to learn how to effectively interact with your database using natural language.
